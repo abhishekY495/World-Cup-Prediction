@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+body {
+  background-color: #202124;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,p,ul,li {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  height: 1.3rem;
+}
+
+header {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 3.5rem;
+  background-color: rgb(53, 92, 79);
+}
+header img {
+  width: 2.5rem;
+  height: auto;
+}
+
+.world-cup-img {
+  height: 25rem;
+}
+
+.world-cup-prediction {
+  display: flex;
+  gap: 4.5rem;
+  justify-content: center;
+}
+.quarter-finals {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.semi-finals {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin: 4rem 0;
+  font-size: 1.1rem;
+}
+.finals {
+  margin: auto 0;
+  font-size: 1.3rem;
+}
+.winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.winner h2 {
+  font-size: 1.5rem;
+}
+.winner span {
+  font-size: 2.5rem;
+}
+
+.quarter-finals-group,
+.semi-finals-group,
+.finals-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid rgb(110, 110, 110);
+  width: fit-content;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  position: relative;
+}
+.semi-finals-group .country-name {
+    width: 3.2rem;
+}
+.semi-finals-group .forward {
+    left: 10.8rem;
+}
+.finals-group .country-name {
+    width: 3.5rem;
+}
+.finals-group .forward {
+    left: 11.1rem;
+    bottom: 2.6rem;
+}
+
+.score {
+  width: 2.5rem;
+  height: 1.5rem;
+  text-align: center;
+  padding-right: 0.5rem;
+  border-radius: 0.2rem;
+  border: none;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+
+.forward {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 1rem;
+  background-color: green;
+  left: 10.4rem;
+  bottom: 2.3rem;
+  position: absolute;
+}
+.forward:hover {
+  cursor: pointer;
+}
+
+.country-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.country-name {
+  font-weight: 500;
+  width: 2.8rem;
+}
+
+/*  */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
