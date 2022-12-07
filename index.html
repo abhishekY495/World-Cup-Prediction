@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="icon" type="image/x-icon" href="https://images.fotmob.com/image_resources/logo/leaguelogo/dark/77.png">
+    <link rel="icon" type="image/x-icon" href="https://images.fotmob.com/image_resources/logo/leaguelogo/dark/77.png" />
     <script src="./app.js" defer></script>
     <title>World Cup 2022 Prediction</title>
   </head>
@@ -29,17 +29,17 @@
               <p class="country-name">NED</p>
               <img
                 class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/nl.svg"
+                src="./assets/flags/netherland.svg"
                 alt="Flag of Netherland"
               />
               <input id="ned-goals" class="score" type="number" min="0" />
             </div>
-            <span class="forward"></span>
+            <span class="forward forward-quarter-group-1"></span>
             <div class="country-container">
               <p class="country-name">ARG</p>
               <img
                 class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/ar.svg"
+                src="./assets/flags/argentina.svg"
                 alt="Argentina flag"
               />
               <input id="arg-goals" class="score" type="number" min="0" />
@@ -52,17 +52,17 @@
               <p class="country-name">CRO</p>
               <img
                 class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/hr.svg"
+                src="./assets/flags/croatia.svg"
                 alt="Flag of Croatia"
               />
               <input id="cro-goals" class="score" type="number" min="0" />
             </div>
-            <span class="forward"></span>
+            <span class="forward forward-quarter-group-2"></span>
             <div class="country-container">
               <p class="country-name">BRA</p>
               <img
                 class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/br.svg"
+                src="./assets/flags/brazil.svg"
                 alt="Flag of Brazil"
               />
               <input id="bra-goals" class="score" type="number" min="0" />
@@ -76,17 +76,17 @@
               <p class="country-name">ENG</p>
               <img
                 class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/gb-eng.svg"
+                src="./assets/flags/england.svg"
                 alt="Flag of England"
               />
               <input id="eng-goals" class="score" type="number" min="0" />
             </div>
-            <span class="forward"></span>
+            <span class="forward forward-quarter-group-3"></span>
             <div class="country-container">
               <p class="country-name">FRA</p>
               <img
                 class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/fr.svg"
+                src="./assets/flags/france.svg"
                 alt="Flag of France"
               />
               <input id="fra-goals" class="score" type="number" min="0" />
@@ -96,20 +96,20 @@
         <div class="country-list">
           <div class="quarter-finals-group">
             <div class="country-container">
-              <p class="country-name">SPA</p>
+              <p class="country-name">MAR</p>
               <img
                 class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/es.svg"
-                alt="Flag of Spain"
+                src="./assets/flags/morocco.svg"
+                alt="Flag of Morocco"
               />
-              <input id="spa-goals" class="score" type="number" min="0" />
+              <input id="mar-goals" class="score" type="number" min="0" />
             </div>
-            <span class="forward"></span>
+            <span class="forward forward-quarter-group-4"></span>
             <div class="country-container">
               <p class="country-name">POR</p>
               <img
                 class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/pt.svg"
+                src="./assets/flags/portugal.svg"
                 alt="Flag of Portugal"
               />
               <input id="por-goals" class="score" type="number" min="0" />
@@ -117,27 +117,34 @@
           </div>
         </div>
       </div>
+      <!--  -->
       <div class="semi-finals">
         <div class="country-list">
           <div class="semi-finals-group">
             <div class="country-container">
-              <p class="country-name">ASD</p>
+              <p class="country-name semi-final-group1-team1">---</p>
               <img
-                class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/nl.svg"
-                alt="Flag of Netherland"
+                class="country-image semi-final-group1-team1-flag"
+                src="./assets/flags/flag.svg"
               />
-              <input id="ned-goals" class="score" type="number" min="0" />
+              <input
+                class="score semi-group1-team1-score"
+                type="number"
+                min="0"
+              />
             </div>
-            <span class="forward"></span>
+            <span class="forward forward-semi-group-1"></span>
             <div class="country-container">
-              <p class="country-name">QWE</p>
+              <p class="country-name semi-final-group1-team2">---</p>
               <img
-                class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/ar.svg"
-                alt="Argentina flag"
+                class="country-image semi-final-group1-team2-flag"
+                src="./assets/flags/flag.svg"
               />
-              <input id="arg-goals" class="score" type="number" min="0" />
+              <input
+                class="score semi-group1-team2-score"
+                type="number"
+                min="0"
+              />
             </div>
           </div>
         </div>
@@ -148,56 +155,66 @@
         <div class="country-list">
           <div class="semi-finals-group">
             <div class="country-container">
-              <p class="country-name">ASD</p>
+              <p class="country-name semi-final-group2-team1">---</p>
               <img
-                class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/nl.svg"
-                alt="Flag of Netherland"
+                class="country-image semi-final-group2-team1-flag"
+                src="./assets/flags/flag.svg"
               />
-              <input id="ned-goals" class="score" type="number" min="0" />
+              <input
+                class="score semi-group2-team1-score"
+                type="number"
+                min="0"
+              />
             </div>
-            <span class="forward"></span>
+            <span class="forward forward-semi-group-2"></span>
             <div class="country-container">
-              <p class="country-name">QWE</p>
+              <p class="country-name semi-final-group2-team2">---</p>
               <img
-                class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/ar.svg"
-                alt="Argentina flag"
+                class="country-image semi-final-group2-team2-flag"
+                src="./assets/flags/flag.svg"
               />
-              <input id="arg-goals" class="score" type="number" min="0" />
+              <input
+                class="score semi-group2-team2-score"
+                type="number"
+                min="0"
+              />
             </div>
           </div>
         </div>
       </div>
+      <!--  -->
       <div class="finals">
         <div class="country-list">
           <div class="finals-group">
             <div class="country-container">
-              <p class="country-name">ASD</p>
+              <p class="country-name final-team1">---</p>
               <img
-                class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/nl.svg"
-                alt="Flag of Netherland"
+                class="country-image final-team1-flag"
+                src="./assets/flags/flag.svg"
               />
-              <input id="ned-goals" class="score" type="number" min="0" />
+              <input class="score final-team1-score" type="number" min="0" />
             </div>
-            <span class="forward"></span>
+            <span class="forward forward-final"></span>
             <div class="country-container">
-              <p class="country-name">QWE</p>
+              <p class="country-name final-team2">---</p>
               <img
-                class="country-image"
-                src="https://flagicons.lipis.dev/flags/4x3/ar.svg"
-                alt="Argentina flag"
+                class="country-image final-team2-flag"
+                src="./assets/flags/flag.svg"
               />
-              <input id="arg-goals" class="score" type="number" min="0" />
+              <input class="score final-team2-score" type="number" min="0" />
             </div>
           </div>
         </div>
       </div>
+      <!--  -->
       <div class="winner">
         <h2>The world cup winner is</h2>
         <span>Argentina</span>
-        <img class="world-cup-img" src="./world-cup.png" alt="world cup">
+        <img
+          class="world-cup-img"
+          src="./assets/world-cup.png"
+          alt="world cup"
+        />
       </div>
     </div>
   </body>
