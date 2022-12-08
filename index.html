@@ -5,21 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="icon" type="image/x-icon" href="https://images.fotmob.com/image_resources/logo/leaguelogo/dark/77.png" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://images.fotmob.com/image_resources/logo/leaguelogo/dark/77.png"
+    />
     <script src="./app.js" defer></script>
     <title>World Cup 2022 Prediction</title>
   </head>
   <body>
     <header>
-      <img
-        src="https://images.fotmob.com/image_resources/logo/leaguelogo/dark/77.png"
-        alt="world-cup logo"
-      />
-      World Cup 2022
-      <img
-        src="https://images.fotmob.com/image_resources/logo/leaguelogo/dark/77.png"
-        alt="world-cup logo"
-      />
+      <img src="https://img.icons8.com/color/48/null/world-cup.png" />
+      <a href="./index.html">
+        World Cup 2022
+      </a>
+      <img src="https://img.icons8.com/color/48/null/world-cup.png" />
     </header>
     <div class="world-cup-prediction">
       <div class="quarter-finals">
@@ -34,7 +34,8 @@
               />
               <input id="ned-goals" class="score" type="number" min="0" />
             </div>
-            <span class="forward forward-quarter-group-1"></span>
+            <button class="forward forward-quarter-group-1"></button>
+            <div class="svg"></div>
             <div class="country-container">
               <p class="country-name">ARG</p>
               <img
@@ -57,7 +58,8 @@
               />
               <input id="cro-goals" class="score" type="number" min="0" />
             </div>
-            <span class="forward forward-quarter-group-2"></span>
+            <button class="forward forward-quarter-group-2"></button>
+            <div class="svg"></div>
             <div class="country-container">
               <p class="country-name">BRA</p>
               <img
@@ -81,7 +83,8 @@
               />
               <input id="eng-goals" class="score" type="number" min="0" />
             </div>
-            <span class="forward forward-quarter-group-3"></span>
+            <button class="forward forward-quarter-group-3"></button>
+            <div class="svg"></div>
             <div class="country-container">
               <p class="country-name">FRA</p>
               <img
@@ -104,7 +107,8 @@
               />
               <input id="mar-goals" class="score" type="number" min="0" />
             </div>
-            <span class="forward forward-quarter-group-4"></span>
+            <button class="forward forward-quarter-group-4"></button>
+            <div class="svg"></div>
             <div class="country-container">
               <p class="country-name">POR</p>
               <img
@@ -119,10 +123,10 @@
       </div>
       <!--  -->
       <div class="semi-finals">
-        <div class="country-list">
+        <div class="smf-country-list-1">
           <div class="semi-finals-group">
             <div class="country-container">
-              <p class="country-name semi-final-group1-team1">---</p>
+              <p class="country-name semi-final-group1-team1"></p>
               <img
                 class="country-image semi-final-group1-team1-flag"
                 src="./assets/flags/flag.svg"
@@ -131,11 +135,13 @@
                 class="score semi-group1-team1-score"
                 type="number"
                 min="0"
+                disabled
               />
             </div>
-            <span class="forward forward-semi-group-1"></span>
+            <button disabled class="forward forward-semi-group-1"></button>
+            <div class="svg"></div>
             <div class="country-container">
-              <p class="country-name semi-final-group1-team2">---</p>
+              <p class="country-name semi-final-group1-team2"></p>
               <img
                 class="country-image semi-final-group1-team2-flag"
                 src="./assets/flags/flag.svg"
@@ -144,6 +150,7 @@
                 class="score semi-group1-team2-score"
                 type="number"
                 min="0"
+                disabled
               />
             </div>
           </div>
@@ -152,10 +159,10 @@
         <br />
         <br />
         <br />
-        <div class="country-list">
+        <div class="smf-country-list-2">
           <div class="semi-finals-group">
             <div class="country-container">
-              <p class="country-name semi-final-group2-team1">---</p>
+              <p class="country-name semi-final-group2-team1"></p>
               <img
                 class="country-image semi-final-group2-team1-flag"
                 src="./assets/flags/flag.svg"
@@ -164,11 +171,13 @@
                 class="score semi-group2-team1-score"
                 type="number"
                 min="0"
+                disabled
               />
             </div>
-            <span class="forward forward-semi-group-2"></span>
+            <button disabled class="forward forward-semi-group-2"></button>
+            <div class="svg"></div>
             <div class="country-container">
-              <p class="country-name semi-final-group2-team2">---</p>
+              <p class="country-name semi-final-group2-team2"></p>
               <img
                 class="country-image semi-final-group2-team2-flag"
                 src="./assets/flags/flag.svg"
@@ -177,6 +186,7 @@
                 class="score semi-group2-team2-score"
                 type="number"
                 min="0"
+                disabled
               />
             </div>
           </div>
@@ -187,29 +197,30 @@
         <div class="country-list">
           <div class="finals-group">
             <div class="country-container">
-              <p class="country-name final-team1">---</p>
+              <p class="country-name final-team1"></p>
               <img
                 class="country-image final-team1-flag"
                 src="./assets/flags/flag.svg"
               />
-              <input class="score final-team1-score" type="number" min="0" />
+              <input disabled class="score final-team1-score" type="number" min="0" />
             </div>
-            <span class="forward forward-final"></span>
+            <button disabled class="forward forward-final"></button>
+            <div class="svg"></div>
             <div class="country-container">
-              <p class="country-name final-team2">---</p>
+              <p class="country-name final-team2"></p>
               <img
                 class="country-image final-team2-flag"
                 src="./assets/flags/flag.svg"
               />
-              <input class="score final-team2-score" type="number" min="0" />
+              <input disabled class="score final-team2-score" type="number" min="0" />
             </div>
           </div>
         </div>
       </div>
       <!--  -->
-      <div class="winner">
+      <div class="winner show-cup">
         <h2>The world cup winner is</h2>
-        <span>Argentina</span>
+        <span>&nbsp;</span>
         <img
           class="world-cup-img"
           src="./assets/world-cup.png"
@@ -217,5 +228,19 @@
         />
       </div>
     </div>
+
+    <div class="callout">
+      <p class="closebtn" onclick="this.parentElement.style.display='none';">Scores cannot be same &nbsp;&nbsp;
+        <p class="cross" onclick="this.parentElement.style.display='none';">❌</p>
+      </p>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.0/lottie.min.js"
+      integrity="sha512-17otjw7eTNU9MtpB7mFfXEwB6yDjA2qjDFkKSvsywI1PRAgpyOo+cp/wPSE/1kK4fFjA9OKsZVO1tr93MGNCEw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@2/tsparticles.preset.confetti.bundle.min.js"></script>
   </body>
 </html>
