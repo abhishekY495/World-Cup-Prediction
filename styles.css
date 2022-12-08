@@ -1,7 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
+/*  */
+.svg {
+  width: 150px;
+  position: absolute;
+  left: 6rem;
+  bottom: -2rem;
+  pointer-events: none;
+}
+/*  */
+.callout {
+  display: none;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 5.8rem;
+  text-align: center;
+  background-color: #cacaca;
+  color: black;
+  width: fit-content;
+  padding: 0 0 0 1rem;
+  font-size: 1.2rem;
+}
+.cross {
+  background-color: #fdb3b3;
+  width: 2rem;
+}
+.cross:hover {
+  cursor: pointer;
+}
+
+/*  */
+
 body {
-  background-color: #202124;
+  background-color: #121212;
   color: white;
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -12,19 +46,33 @@ h1,h2,h3,h4,h5,p,ul,li {
   padding: 0;
 }
 
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+}
+
 img {
   height: 1.3rem;
 }
 
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
   text-align: center;
+  height: 5.8rem;
+  margin-bottom: 2.9rem;
   font-size: 3.5rem;
-  margin-bottom: 3.5rem;
-  background-color: rgb(53, 92, 79);
+  font-weight: bold;
+  background-color: #e5a91c;
+  color: black;
 }
 header img {
-  width: 2.5rem;
-  height: auto;
+  width: 3.5rem;
+  height: 3.5rem;
 }
 
 .world-cup-img {
@@ -70,7 +118,7 @@ header img {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  border: 1px solid rgb(110, 110, 110);
+  border: 1px solid #6e6e6e;
   width: fit-content;
   padding: 0.8rem;
   border-radius: 0.5rem;
@@ -80,14 +128,15 @@ header img {
     width: 3.2rem;
 }
 .semi-finals-group .forward {
-    left: 10.8rem;
+    left: 10.85rem;
+    bottom: 2.35rem;
 }
 .finals-group .country-name {
     width: 3.5rem;
 }
 .finals-group .forward {
     left: 11.1rem;
-    bottom: 2.6rem;
+    bottom: 2.3rem;
 }
 
 .score {
@@ -103,13 +152,14 @@ header img {
 }
 
 .forward {
-  width: 0.8rem;
   height: 0.8rem;
-  border-radius: 1rem;
-  background-color: green;
+  border-radius: 50%;
+  background-color: #02be02;
   left: 10.4rem;
   bottom: 2.3rem;
   position: absolute;
+  box-shadow: none;
+  border: none;
 }
 .forward:hover {
   cursor: pointer;
@@ -134,4 +184,42 @@ input::-webkit-inner-spin-button {
 }
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+/*  */
+.smf-country-list-1, .smf-country-list-2 {
+  opacity: 0.5;
+}
+.finals .finals-group {
+  opacity: 0.3;
+}
+.winner {
+  opacity: 0.05;
+}
+
+/*  */
+
+.show-cup {
+  transition: opacity 3s;
+}
+
+
+.shake-score {
+  animation: shake 0.5s;
+  outline: 1px solid red;
+  outline-offset: -1px;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  10% { transform: translateX(1.2px); }
+  20% { transform: translateX(-1.2px); }
+  30% { transform: translateX(1.2px); }
+  40% { transform: translateX(-1.2px); }
+  50% { transform: translateX(1.2px); }
+  60% { transform: translateX(-1.2px); }
+  70% { transform: translateX(1.2px); }
+  80% { transform: translateX(-1.2px); }
+  90% { transform: translateX(1.2px); }
+  100% { transform: translateX(0); }
 }
