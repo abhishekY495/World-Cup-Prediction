@@ -9,7 +9,7 @@
   pointer-events: none;
 }
 /*  */
-.callout {
+.callout-box {
   display: none;
   position: absolute;
   margin-left: auto;
@@ -27,6 +27,7 @@
 .cross {
   background-color: #fdb3b3;
   width: 2rem;
+  margin-left: 1rem;
 }
 .cross:hover {
   cursor: pointer;
@@ -92,7 +93,7 @@ header img {
 .semi-finals {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3.9rem;
   margin: 4rem 0;
   font-size: 1.1rem;
 }
@@ -198,7 +199,7 @@ input[type="number"] {
   opacity: 0.5;
 }
 .finals .finals-group {
-  opacity: 0.3;
+  opacity: 0.4;
 }
 .hide {
   opacity: 0.05;
@@ -228,4 +229,118 @@ input[type="number"] {
   80% { transform: translateX(-1.2px); }
   90% { transform: translateX(1.2px); }
   100% { transform: translateX(0); }
+}
+
+/*  */
+.forward-line {
+  display: none;
+  width: 9.5rem;
+  height: 1.5px;
+  background-color: #787878;
+  position: absolute;
+  top: 2.65rem;
+  left: 10.8rem;
+  z-index: -1;
+  animation: go-forward linear 0.6s;
+  -webkit-animation: go-forward linear 0.6s;
+  -moz-animation: go-forward linear 0.6s;
+  -o-animation: go-forward linear 0.6s;
+}
+.down-line {
+  display: none;
+  width: 1.5px;
+  height: 1.25rem;
+  background-color: #787878;
+  position: absolute;
+  top: 2.65rem;
+  left: 20.2rem;
+  animation: go-down linear 0.6s;
+  -webkit-animation: go-down linear 0.6s;
+  -moz-animation: go-down linear 0.6s;
+  -o-animation: go-down linear 0.6s;
+}
+.up-line {
+  display: none;
+  width: 1.5px;
+  height: 1.25rem;
+  background-color: #787878;
+  position: absolute;
+  bottom: 2.65rem;
+  left: 20.2rem;
+  animation: go-up linear 0.6s;
+  -webkit-animation: go-up linear 0.6s;
+  -moz-animation: go-up linear 0.6s;
+  -o-animation: go-up linear 0.6s;
+}
+
+/*  */
+.semi-forward-line {
+  display: none;
+  width: 9.8rem;
+  height: 1.5px;
+  background-color: #787878;
+  position: absolute;
+  top: 2.6rem;
+  left: 11rem;
+  z-index: -1;
+  animation: semi-go-forward linear 0.6s;
+  -webkit-animation: semi-go-forward linear 0.6s;
+  -moz-animation: semi-go-forward linear 0.6s;
+  -o-animation: semi-go-forward linear 0.6s;
+}
+.semi-down-line {
+  display: none;
+  width: 1.5px;
+  height: 7.09rem;
+  background-color: #787878;
+  position: absolute;
+  top: 2.6rem;
+  left: 20.8rem;
+  animation: semi-go-down linear 0.6s;
+  -webkit-animation: semi-go-down linear 0.6s;
+  -moz-animation: semi-go-down linear 0.6s;
+  -o-animation: semi-go-down linear 0.6s;
+}
+.semi-up-line {
+  display: none;
+  width: 1.5px;
+  height: 6.9rem;
+  background-color: #787878;
+  position: absolute;
+  bottom: 2.7rem;
+  left: 20.8rem;
+  animation: semi-go-up linear 0.6s;
+  -webkit-animation: semi-go-up linear 0.6s;
+  -moz-animation: semi-go-up linear 0.6s;
+  -o-animation: semi-go-up linear 0.6s;
+}
+
+/*  */
+
+@keyframes go-forward {
+  0% {width: 0;}
+  100% {width: 9.5rem;}
+}
+@keyframes go-down {
+  0% {height: 0;}
+  100% {height: 1.25rem;}
+}
+@keyframes go-up {
+  0% {height: 0;}
+  100% {height: 1.25rem;}
+}
+
+/*  */
+
+@keyframes semi-go-forward {
+  0% {width: 0;}
+  100% {width: 9.8rem;}
+}
+@keyframes semi-go-down {
+  0% {height: 0;}
+  100% {height: 7.09rem;}
+}
+@keyframes semi-go-up {
+  0% {height: 0;}
+  100% {height: 6.9rem;}
 }
