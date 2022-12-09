@@ -1,130 +1,3 @@
-// tsParticles.load("tsparticles", {
-//   "fullScreen": {
-//     "zIndex": 1
-//   },
-//   "particles": {
-//     "number": {
-//       "value": 0
-//     },
-//     "color": {
-//       "value": [
-//         "#00FFFC",
-//         "#FC00FF",
-//         "#fffc00"
-//       ]
-//     },
-//     "shape": {
-//       "type": "square",
-//       "options": {}
-//     },
-//     "opacity": {
-//       "value": 1,
-//       "animation": {
-//         "enable": true,
-//         "minimumValue": 0,
-//         "speed": 2,
-//         "startValue": "max",
-//         "destroy": "min"
-//       }
-//     },
-//     "size": {
-//       "value": 4,
-//       "random": {
-//         "enable": true,
-//         "minimumValue": 5
-//       }
-//     },
-//     "links": {
-//       "enable": false
-//     },
-//     "life": {
-//       "duration": {
-//         "sync": true,
-//         "value": 5
-//       },
-//       "count": 1
-//     },
-//     "move": {
-//       "enable": true,
-//       "gravity": {
-//         "enable": true,
-//         "acceleration": 5
-//       },
-//       "speed": {
-//         "min": 20,
-//         "max": 20
-//       },
-//       "decay": 0.1,
-//       "direction": "none",
-//       "straight": false,
-//       "outModes": {
-//         "default": "destroy",
-//         "top": "none"
-//       }
-//     },
-//     "rotate": {
-//       "value": {
-//         "min": 0,
-//         "max": 360
-//       },
-//       "direction": "random",
-//       "move": true,
-//       "animation": {
-//         "enable": true,
-//         "speed": 60
-//       }
-//     },
-//     "tilt": {
-//       "direction": "random",
-//       "enable": true,
-//       "move": true,
-//       "value": {
-//         "min": 0,
-//         "max": 360
-//       },
-//       "animation": {
-//         "enable": true,
-//         "speed": 60
-//       }
-//     },
-//     "roll": {
-//       "darken": {
-//         "enable": true,
-//         "value": 25
-//       },
-//       "enable": true,
-//       "speed": {
-//         "min": 15,
-//         "max": 25
-//       }
-//     },
-//     "wobble": {
-//       "distance": 30,
-//       "enable": true,
-//       "move": true,
-//       "speed": {
-//         "min": -15,
-//         "max": 15
-//       }
-//     }
-//   },
-//   "emitters": {
-//     "life": {
-//       "count": 0,
-//       "duration": 0.1,
-//       "delay": 0.4
-//     },
-//     "rate": {
-//       "delay": 0.1,
-//       "quantity": 100
-//     },
-//     "size": {
-//       "width": 0,
-//       "height": 0
-//     }
-//   }
-// });
-
 const nedGoalsInput = document.querySelector("#ned-goals");
 const argGoalsInput = document.querySelector("#arg-goals");
 const croGoalsInput = document.querySelector("#cro-goals");
@@ -190,6 +63,9 @@ forwardQuarterGroup1.addEventListener("click", () => {
     semiFinalGroup1Team1,
     semiFinalGroup1Team1Flag,
     semiGroup1Team1ScoreInput,
+    quarter1ForwardLine,
+    quarter1DownLine,
+    quarter1DownLine
   );
 });
 forwardQuarterGroup2.addEventListener("click", () => {
@@ -198,7 +74,10 @@ forwardQuarterGroup2.addEventListener("click", () => {
     braGoalsInput,
     semiFinalGroup1Team2,
     semiFinalGroup1Team2Flag,
-    semiGroup1Team2ScoreInput
+    semiGroup1Team2ScoreInput,
+    quarter2ForwardLine,
+    quarter2UpLine,
+    quarter2UpLine,
   );
 });
 forwardQuarterGroup3.addEventListener("click", () => {
@@ -207,7 +86,10 @@ forwardQuarterGroup3.addEventListener("click", () => {
     fraGoalsInput,
     semiFinalGroup2Team1,
     semiFinalGroup2Team1Flag,
-    semiGroup2Team1ScoreInput
+    semiGroup2Team1ScoreInput,
+    quarter3ForwardLine,
+    quarter3DownLine,
+    quarter3DownLine,
   );
 });
 forwardQuarterGroup4.addEventListener("click", () => {
@@ -216,7 +98,10 @@ forwardQuarterGroup4.addEventListener("click", () => {
     porGoalsInput,
     semiFinalGroup2Team2,
     semiFinalGroup2Team2Flag,
-    semiGroup2Team2ScoreInput
+    semiGroup2Team2ScoreInput,
+    quarter4ForwardLine,
+    quarter4UpLine,
+    quarter4UpLine
   );
 });
 //
@@ -226,7 +111,10 @@ forwardSemiGroup1.addEventListener("click", () => {
     semiGroup1Team2ScoreInput,
     finalTeam1,
     finalTeam1Flag,
-    finalTeam1ScoreInput
+    finalTeam1ScoreInput,
+    semi1ForwardLine,
+    semi1DownLine,
+    semi1DownLine
   );
 });
 forwardSemiGroup2.addEventListener("click", () => {
@@ -235,7 +123,10 @@ forwardSemiGroup2.addEventListener("click", () => {
     semiGroup2Team2ScoreInput,
     finalTeam2,
     finalTeam2Flag,
-    finalTeam2ScoreInput
+    finalTeam2ScoreInput,
+    semi2ForwardLine,
+    semi2UpLine,
+    semi2UpLine
   );
 });
 
@@ -245,32 +136,81 @@ function confetti(group) {
     animType: 'svg',
     loop: false,
     autoplay: false,
-    path: "https://assets8.lottiefiles.com/packages/lf20_obhph3sh.json"
+    path: "./celebrations/confetti.json"
   })
 }
 
-const calloutMessage = document.querySelector(".callout");
-function qualifyingTeam(goal1, goal2, teamName, flag, scoreInput) {
+const calloutBox = document.querySelector(".callout-box");
+const calloutMessage = document.querySelector(".callout-message");
+// 
+const quarter1ForwardLine = document.querySelector(".quarter-group1-forward-line");
+const quarter1DownLine = document.querySelector(".quarter-group1-down-line");
+const quarter2ForwardLine = document.querySelector(".quarter-group2-forward-line");
+const quarter2UpLine = document.querySelector(".quarter-group2-up-line");
+const quarter3ForwardLine = document.querySelector(".quarter-group3-forward-line");
+const quarter3DownLine = document.querySelector(".quarter-group3-down-line");
+const quarter4ForwardLine = document.querySelector(".quarter-group4-forward-line");
+const quarter4UpLine = document.querySelector(".quarter-group4-up-line");
+
+const semi1ForwardLine = document.querySelector(".semi-group1-forward-line");
+const semi1DownLine = document.querySelector(".semi-group1-down-line");
+const semi2ForwardLine = document.querySelector(".semi-group2-forward-line");
+const semi2UpLine = document.querySelector(".semi-group2-up-line");
+// 
+
+function qualifyingTeam(goal1, goal2, teamName, flag, scoreInput, forward, down, up) {
   if (goal1.value && goal2.value) {
     if (Number(goal1.value) === Number(goal2.value)) {
+      calloutMessage.innerText = "Scores cannot be same."
+      calloutBox.style.display = "flex";
       shakeScore(goal1, goal2);
-      calloutMessage.style.display = "flex"
     } else if (Number(goal1.value) > Number(goal2.value)) {
-      teamName.innerText = goal1.parentElement.innerText;
-      flag.src = goal1.parentElement.childNodes[3].src;
-      confetti(goal1.parentElement.nextElementSibling.nextElementSibling).goToAndPlay(0, true);
-      scoreInput.disabled = false;
-      opacityAndButton();
+      forward.style.display = "block";
+      confetti(goal1.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling).goToAndPlay(0, true);
+      setTimeout(()=> {
+        down.style.display = "block";
+        up.style.display = "block";
+      }, 610);
+      // 
+      setTimeout(() => {
+        teamName.innerText = goal1.parentElement.innerText;
+        flag.src = goal1.parentElement.childNodes[3].src;
+        scoreInput.disabled = false;
+        opacityAndButton();
+      }, 1200)
+      calloutBox.style.display = "none";
     } else {
-      teamName.innerText = goal2.parentElement.innerText;
-      flag.src = goal2.parentElement.childNodes[3].src;
+      forward.style.display = "block";
       confetti(goal2.parentElement.previousElementSibling).goToAndPlay(0, true);
-      scoreInput.disabled = false;
-      opacityAndButton();
+      setTimeout(()=> {
+        up.style.display = "block";
+        down.style.display = "block";
+      }, 610)
+      // 
+      setTimeout(() => {
+        teamName.innerText = goal2.parentElement.innerText;
+        flag.src = goal2.parentElement.childNodes[3].src;
+        scoreInput.disabled = false;
+        opacityAndButton();
+      }, 1200)
+      calloutBox.style.display = "none";
     }
   } else {
     shakeScore(goal1, goal2);
+    calloutMessage.innerText = "Cannot be empty."
+    calloutBox.style.display = "flex";
   }
+}
+
+function downLine(down) {
+  setTimeout(()=> {
+    down.style.display = "block";
+  }, 610);
+}
+function upLine(up) {
+  setTimeout(()=> {
+    up.style.display = "block";
+  }, 610);
 }
 
 function shakeScore(goal1, goal2) {
@@ -317,6 +257,252 @@ function opacityAndButton() {
   }
 }
 
+// 
+
+const winner = document.querySelector(".winner");
+const winningCountryName = document.querySelector(".winner-team");
+
+const finalTeam1Name = document.querySelector(".final-team1");
+const finalTeam1Score = document.querySelector(".final-team1-score");
+const finalTeam2Name = document.querySelector(".final-team2");
+const finalTeam2Score = document.querySelector(".final-team2-score");
+
+function winnerCelebration() {
+  return tsParticles.load("tsparticles", {
+    "fullScreen": {
+      "zIndex": 1
+    },
+    "particles": {
+      "number": {
+        "value": 0
+      },
+      "color": {
+        "value": [
+          "#00FFFC",
+          "#FC00FF",
+          "#fffc00"
+        ]
+      },
+      "shape": {
+        "type": "square",
+        "options": {}
+      },
+      "opacity": {
+        "value": 1,
+        "animation": {
+          "enable": true,
+          "minimumValue": 0,
+          "speed": 2,
+          "startValue": "max",
+          "destroy": "min"
+        }
+      },
+      "size": {
+        "value": 4,
+        "random": {
+          "enable": true,
+          "minimumValue": 5
+        }
+      },
+      "links": {
+        "enable": false
+      },
+      "life": {
+        "duration": {
+          "sync": true,
+          "value": 5
+        },
+        "count": 1
+      },
+      "move": {
+        "enable": true,
+        "gravity": {
+          "enable": true,
+          "acceleration": 5
+        },
+        "speed": {
+          "min": 20,
+          "max": 20
+        },
+        "decay": 0.1,
+        "direction": "none",
+        "straight": false,
+        "outModes": {
+          "default": "destroy",
+          "top": "none"
+        }
+      },
+      "rotate": {
+        "value": {
+          "min": 0,
+          "max": 360
+        },
+        "direction": "random",
+        "move": true,
+        "animation": {
+          "enable": true,
+          "speed": 60
+        }
+      },
+      "tilt": {
+        "direction": "random",
+        "enable": true,
+        "move": true,
+        "value": {
+          "min": 0,
+          "max": 360
+        },
+        "animation": {
+          "enable": true,
+          "speed": 60
+        }
+      },
+      "roll": {
+        "darken": {
+          "enable": true,
+          "value": 25
+        },
+        "enable": true,
+        "speed": {
+          "min": 15,
+          "max": 25
+        }
+      },
+      "wobble": {
+        "distance": 30,
+        "enable": true,
+        "move": true,
+        "speed": {
+          "min": -15,
+          "max": 15
+        }
+      }
+    },
+    "emitters": {
+      "life": {
+        "count": 0,
+        "duration": 0.1,
+        "delay": 0.4
+      },
+      "rate": {
+        "delay": 0.1,
+        "quantity": 100
+      },
+      "size": {
+        "width": 0,
+        "height": 0
+      }
+    }
+  });
+}
+
+function winningTeam() {
+  if (finalTeam1Score.value && finalTeam2Score.value) {
+    if (Number(finalTeam1Score.value) === Number(finalTeam2Score.value)) {
+      calloutMessage.innerText = "Scores cannot be same"
+      calloutBox.style.display = "flex";
+    } else if (Number(finalTeam1Score.value) > Number(finalTeam2Score.value)) {
+      calloutBox.style.display = "none";
+      winner.classList.remove("hide");
+      winner.classList.add("show-cup");
+      winnerCelebration();
+      countryName(finalTeam1Name);
+    } else {
+      calloutBox.style.display = "none";
+      winner.classList.remove("hide");
+      winner.classList.add("show-cup");
+      winnerCelebration();
+      countryName(finalTeam2Name);
+    }
+  } else {
+    shakeScore(finalTeam1Score, finalTeam2Score);
+    calloutMessage.innerText = "Scores cannot be empty"
+    calloutBox.style.display = "flex";
+  }
+}
+
+function countryName(country) {
+  const shortName = country.innerText;
+  if (shortName === "NED") {
+    winningCountryName.innerText = "Netherland";
+  } else if (shortName === "ARG") {
+    winningCountryName.innerText = "Argentina";
+  } else if (shortName === "CRO") {
+    winningCountryName.innerText = "Croatia";
+  } else if (shortName === "BRA") {
+    winningCountryName.innerText = "Brazil";
+  } else if (shortName === "ENG") {
+    winningCountryName.innerText = "England";
+  } else if (shortName === "FRA") {
+    winningCountryName.innerText = "France";
+  } else if (shortName === "MAR") {
+    winningCountryName.innerText = "Morocco";
+  } else if (shortName === "POR") {
+    winningCountryName.innerText = "Portugal";
+  }
+}
+
 forwardFinal.addEventListener("click", () => {
-  console.log(123);
-})
+  winningTeam();
+});
+
+
+
+function forwardColor() {
+  if (!nedGoalsInput.value && !argGoalsInput.value) {
+    forwardQuarterGroup1.style.backgroundColor = "#245c1e";
+  } else {
+    forwardQuarterGroup1.style.backgroundColor = "#02be02";
+  }
+  if (!croGoalsInput.value && !braGoalsInput.value) {
+    forwardQuarterGroup2.style.backgroundColor = "#245c1e";
+  } else {
+    forwardQuarterGroup2.style.backgroundColor = "#02be02";
+  }
+  if (!engGoalsInput.value && !fraGoalsInput.value) {
+    forwardQuarterGroup3.style.backgroundColor = "#245c1e";
+  } else {
+    forwardQuarterGroup3.style.backgroundColor = "#02be02";
+  }
+  if (!marGoalsInput.value && !porGoalsInput.value) {
+    forwardQuarterGroup4.style.backgroundColor = "#245c1e";
+  } else {
+    forwardQuarterGroup4.style.backgroundColor = "#02be02";
+  }
+  // 
+  if (!semiGroup1Team1ScoreInput.value && !semiGroup1Team2ScoreInput.value) {
+    forwardSemiGroup1.style.backgroundColor = "#245c1e";
+  } else {
+    forwardSemiGroup1.style.backgroundColor = "#02be02";
+  }
+  if (!semiGroup2Team1ScoreInput.value && !semiGroup2Team2ScoreInput.value) {
+    forwardSemiGroup2.style.backgroundColor = "#245c1e";
+  } else {
+    forwardSemiGroup2.style.backgroundColor = "#02be02";
+  }
+  // 
+  if (!finalTeam1ScoreInput.value && !finalTeam2ScoreInput.value) {
+    forwardFinal.style.backgroundColor = "#245c1e";
+  } else {
+    forwardFinal.style.backgroundColor = "#02be02";
+  }
+}
+
+forwardColor();
+
+nedGoalsInput.addEventListener("input", () => {forwardColor()});
+argGoalsInput.addEventListener("input", () => {forwardColor()});
+croGoalsInput.addEventListener("input", () => {forwardColor()});
+braGoalsInput.addEventListener("input", () => {forwardColor()});
+engGoalsInput.addEventListener("input", () => {forwardColor()});
+fraGoalsInput.addEventListener("input", () => {forwardColor()});
+marGoalsInput.addEventListener("input", () => {forwardColor()});
+porGoalsInput.addEventListener("input", () => {forwardColor()});
+// 
+semiGroup1Team1ScoreInput.addEventListener("input", () => {forwardColor()});
+semiGroup1Team2ScoreInput.addEventListener("input", () => {forwardColor()});
+semiGroup2Team1ScoreInput.addEventListener("input", () => {forwardColor()});
+semiGroup2Team2ScoreInput.addEventListener("input", () => {forwardColor()});
+// 
+finalTeam1ScoreInput.addEventListener("input", () => {forwardColor()});
+finalTeam2ScoreInput.addEventListener("input", () => {forwardColor()});
