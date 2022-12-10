@@ -7,36 +7,20 @@ const fraGoalsInput = document.querySelector("#fra-goals");
 const marGoalsInput = document.querySelector("#mar-goals");
 const porGoalsInput = document.querySelector("#por-goals");
 //
-const semiGroup1Team1ScoreInput = document.querySelector(
-  ".semi-group1-team1-score"
-);
-const semiGroup1Team2ScoreInput = document.querySelector(
-  ".semi-group1-team2-score"
-);
-const semiGroup2Team1ScoreInput = document.querySelector(
-  ".semi-group2-team1-score"
-);
-const semiGroup2Team2ScoreInput = document.querySelector(
-  ".semi-group2-team2-score"
-);
+const semiGroup1Country1ScoreInput = document.querySelector(".semi-group1-Country1-score");
+const semiGroup1Country2ScoreInput = document.querySelector(".semi-group1-Country2-score");
+const semiGroup2Country1ScoreInput = document.querySelector(".semi-group2-Country1-score");
+const semiGroup2Country2ScoreInput = document.querySelector(".semi-group2-Country2-score");
 //
-const semiFinalGroup1Team1Flag = document.querySelector(
-  ".semi-final-group1-team1-flag"
-);
-const semiFinalGroup1Team2Flag = document.querySelector(
-  ".semi-final-group1-team2-flag"
-);
-const semiFinalGroup2Team1Flag = document.querySelector(
-  ".semi-final-group2-team1-flag"
-);
-const semiFinalGroup2Team2Flag = document.querySelector(
-  ".semi-final-group2-team2-flag"
-);
-const finalTeam1Flag = document.querySelector(".final-team1-flag");
-const finalTeam2Flag = document.querySelector(".final-team2-flag");
+const semiFinalGroup1Country1Flag = document.querySelector(".semi-final-group1-Country1-flag");
+const semiFinalGroup1Country2Flag = document.querySelector(".semi-final-group1-Country2-flag");
+const semiFinalGroup2Country1Flag = document.querySelector(".semi-final-group2-Country1-flag");
+const semiFinalGroup2Country2Flag = document.querySelector(".semi-final-group2-Country2-flag");
+const finalCountry1Flag = document.querySelector(".final-Country1-flag");
+const finalCountry2Flag = document.querySelector(".final-Country2-flag");
 //
-const finalTeam1ScoreInput = document.querySelector(".final-team1-score");
-const finalTeam2ScoreInput = document.querySelector(".final-team2-score");
+const finalCountry1ScoreInput = document.querySelector(".final-Country1-score");
+const finalCountry2ScoreInput = document.querySelector(".final-Country2-score");
 
 const forwardQuarterGroup1 = document.querySelector(".forward-quarter-group-1");
 const forwardQuarterGroup2 = document.querySelector(".forward-quarter-group-2");
@@ -46,59 +30,59 @@ const forwardSemiGroup1 = document.querySelector(".forward-semi-group-1");
 const forwardSemiGroup2 = document.querySelector(".forward-semi-group-2");
 const forwardFinal = document.querySelector(".forward-final");
 
-const semiFinalGroup1Team1 = document.querySelector(".semi-final-group1-team1");
-const semiFinalGroup1Team2 = document.querySelector(".semi-final-group1-team2");
-const semiFinalGroup2Team1 = document.querySelector(".semi-final-group2-team1");
-const semiFinalGroup2Team2 = document.querySelector(".semi-final-group2-team2");
+const semiFinalGroup1Country1 = document.querySelector(".semi-final-group1-Country1");
+const semiFinalGroup1Country2 = document.querySelector(".semi-final-group1-Country2");
+const semiFinalGroup2Country1 = document.querySelector(".semi-final-group2-Country1");
+const semiFinalGroup2Country2 = document.querySelector(".semi-final-group2-Country2");
 
-const finalTeam1 = document.querySelector(".final-team1");
-const finalTeam2 = document.querySelector(".final-team2");
+const finalCountry1 = document.querySelector(".final-Country1");
+const finalCountry2 = document.querySelector(".final-Country2");
 
 //
 
 forwardQuarterGroup1.addEventListener("click", () => {
-  qualifyingTeam(
+  qualifyingCountry(
     nedGoalsInput,
     argGoalsInput,
-    semiFinalGroup1Team1,
-    semiFinalGroup1Team1Flag,
-    semiGroup1Team1ScoreInput,
+    semiFinalGroup1Country1,
+    semiFinalGroup1Country1Flag,
+    semiGroup1Country1ScoreInput,
     quarter1ForwardLine,
     quarter1DownLine,
     quarter1DownLine
   );
 });
 forwardQuarterGroup2.addEventListener("click", () => {
-  qualifyingTeam(
+  qualifyingCountry(
     croGoalsInput,
     braGoalsInput,
-    semiFinalGroup1Team2,
-    semiFinalGroup1Team2Flag,
-    semiGroup1Team2ScoreInput,
+    semiFinalGroup1Country2,
+    semiFinalGroup1Country2Flag,
+    semiGroup1Country2ScoreInput,
     quarter2ForwardLine,
     quarter2UpLine,
     quarter2UpLine,
   );
 });
 forwardQuarterGroup3.addEventListener("click", () => {
-  qualifyingTeam(
+  qualifyingCountry(
     engGoalsInput,
     fraGoalsInput,
-    semiFinalGroup2Team1,
-    semiFinalGroup2Team1Flag,
-    semiGroup2Team1ScoreInput,
+    semiFinalGroup2Country1,
+    semiFinalGroup2Country1Flag,
+    semiGroup2Country1ScoreInput,
     quarter3ForwardLine,
     quarter3DownLine,
     quarter3DownLine,
   );
 });
 forwardQuarterGroup4.addEventListener("click", () => {
-  qualifyingTeam(
+  qualifyingCountry(
     marGoalsInput,
     porGoalsInput,
-    semiFinalGroup2Team2,
-    semiFinalGroup2Team2Flag,
-    semiGroup2Team2ScoreInput,
+    semiFinalGroup2Country2,
+    semiFinalGroup2Country2Flag,
+    semiGroup2Country2ScoreInput,
     quarter4ForwardLine,
     quarter4UpLine,
     quarter4UpLine
@@ -106,24 +90,24 @@ forwardQuarterGroup4.addEventListener("click", () => {
 });
 //
 forwardSemiGroup1.addEventListener("click", () => {
-  qualifyingTeam(
-    semiGroup1Team1ScoreInput,
-    semiGroup1Team2ScoreInput,
-    finalTeam1,
-    finalTeam1Flag,
-    finalTeam1ScoreInput,
+  qualifyingCountry(
+    semiGroup1Country1ScoreInput,
+    semiGroup1Country2ScoreInput,
+    finalCountry1,
+    finalCountry1Flag,
+    finalCountry1ScoreInput,
     semi1ForwardLine,
     semi1DownLine,
     semi1DownLine
   );
 });
 forwardSemiGroup2.addEventListener("click", () => {
-  qualifyingTeam(
-    semiGroup2Team1ScoreInput,
-    semiGroup2Team2ScoreInput,
-    finalTeam2,
-    finalTeam2Flag,
-    finalTeam2ScoreInput,
+  qualifyingCountry(
+    semiGroup2Country1ScoreInput,
+    semiGroup2Country2ScoreInput,
+    finalCountry2,
+    finalCountry2Flag,
+    finalCountry2ScoreInput,
     semi2ForwardLine,
     semi2UpLine,
     semi2UpLine
@@ -158,7 +142,7 @@ const semi2ForwardLine = document.querySelector(".semi-group2-forward-line");
 const semi2UpLine = document.querySelector(".semi-group2-up-line");
 // 
 
-function qualifyingTeam(goal1, goal2, teamName, flag, scoreInput, forward, down, up) {
+function qualifyingCountry(goal1, goal2, CountryName, flag, scoreInput, forward, down, up) {
   if (goal1.value && goal2.value) {
     if (Number(goal1.value) === Number(goal2.value)) {
       calloutMessage.innerText = "Scores cannot be same."
@@ -173,7 +157,7 @@ function qualifyingTeam(goal1, goal2, teamName, flag, scoreInput, forward, down,
       }, 610);
       // 
       setTimeout(() => {
-        teamName.innerText = goal1.parentElement.innerText;
+        CountryName.innerText = goal1.parentElement.innerText;
         flag.src = goal1.parentElement.childNodes[3].src;
         scoreInput.disabled = false;
         opacityAndButton();
@@ -188,7 +172,7 @@ function qualifyingTeam(goal1, goal2, teamName, flag, scoreInput, forward, down,
       }, 610)
       // 
       setTimeout(() => {
-        teamName.innerText = goal2.parentElement.innerText;
+        CountryName.innerText = goal2.parentElement.innerText;
         flag.src = goal2.parentElement.childNodes[3].src;
         scoreInput.disabled = false;
         opacityAndButton();
@@ -231,7 +215,7 @@ const semiFinalsGroup1 = document.querySelector(".smf-country-list-1");
 const semiFinalsGroup2 = document.querySelector(".smf-country-list-2");
 const finalsGroup = document.querySelector(".finals-group");
 function opacityAndButton() {
-  if (semiFinalGroup1Team1.innerText && semiFinalGroup1Team2.innerText) {
+  if (semiFinalGroup1Country1.innerText && semiFinalGroup1Country2.innerText) {
     semiFinalsGroup1.style.opacity = 1;
     forwardSemiGroup1.disabled = false;
   } else {
@@ -239,7 +223,7 @@ function opacityAndButton() {
     forwardSemiGroup1.disabled = true;
   }
   //
-  if (semiFinalGroup2Team1.innerText && semiFinalGroup2Team2.innerText) {
+  if (semiFinalGroup2Country1.innerText && semiFinalGroup2Country2.innerText) {
     semiFinalsGroup2.style.opacity = 1;
     forwardSemiGroup2.disabled = false;
   } else {
@@ -247,7 +231,7 @@ function opacityAndButton() {
     forwardSemiGroup2.disabled = true;
   }
   //
-  if (finalTeam1.innerText && finalTeam2.innerText) {
+  if (finalCountry1.innerText && finalCountry2.innerText) {
     finalsGroup.style.opacity = 1;
     forwardFinal.style.bottom = "2.6rem";
     forwardFinal.disabled = false;
@@ -260,12 +244,12 @@ function opacityAndButton() {
 // 
 
 const winner = document.querySelector(".winner");
-const winningCountryName = document.querySelector(".winner-team");
+const winningCountryName = document.querySelector(".winner-Country");
 
-const finalTeam1Name = document.querySelector(".final-team1");
-const finalTeam1Score = document.querySelector(".final-team1-score");
-const finalTeam2Name = document.querySelector(".final-team2");
-const finalTeam2Score = document.querySelector(".final-team2-score");
+const finalCountry1Name = document.querySelector(".final-Country1");
+const finalCountry1Score = document.querySelector(".final-Country1-score");
+const finalCountry2Name = document.querySelector(".final-Country2");
+const finalCountry2Score = document.querySelector(".final-Country2-score");
 
 function winnerCelebration() {
   return tsParticles.load("tsparticles", {
@@ -396,26 +380,26 @@ function winnerCelebration() {
   });
 }
 
-function winningTeam() {
-  if (finalTeam1Score.value && finalTeam2Score.value) {
-    if (Number(finalTeam1Score.value) === Number(finalTeam2Score.value)) {
+function winningCountry() {
+  if (finalCountry1Score.value && finalCountry2Score.value) {
+    if (Number(finalCountry1Score.value) === Number(finalCountry2Score.value)) {
       calloutMessage.innerText = "Scores cannot be same"
       calloutBox.style.display = "flex";
-    } else if (Number(finalTeam1Score.value) > Number(finalTeam2Score.value)) {
+    } else if (Number(finalCountry1Score.value) > Number(finalCountry2Score.value)) {
       calloutBox.style.display = "none";
       winner.classList.remove("hide");
       winner.classList.add("show-cup");
       winnerCelebration();
-      countryName(finalTeam1Name);
+      countryName(finalCountry1Name);
     } else {
       calloutBox.style.display = "none";
       winner.classList.remove("hide");
       winner.classList.add("show-cup");
       winnerCelebration();
-      countryName(finalTeam2Name);
+      countryName(finalCountry2Name);
     }
   } else {
-    shakeScore(finalTeam1Score, finalTeam2Score);
+    shakeScore(finalCountry1Score, finalCountry2Score);
     calloutMessage.innerText = "Scores cannot be empty"
     calloutBox.style.display = "flex";
   }
@@ -443,7 +427,7 @@ function countryName(country) {
 }
 
 forwardFinal.addEventListener("click", () => {
-  winningTeam();
+  winningCountry();
 });
 
 
@@ -470,18 +454,18 @@ function forwardColor() {
     forwardQuarterGroup4.style.backgroundColor = "#02be02";
   }
   // 
-  if (!semiGroup1Team1ScoreInput.value && !semiGroup1Team2ScoreInput.value) {
+  if (!semiGroup1Country1ScoreInput.value && !semiGroup1Country2ScoreInput.value) {
     forwardSemiGroup1.style.backgroundColor = "#245c1e";
   } else {
     forwardSemiGroup1.style.backgroundColor = "#02be02";
   }
-  if (!semiGroup2Team1ScoreInput.value && !semiGroup2Team2ScoreInput.value) {
+  if (!semiGroup2Country1ScoreInput.value && !semiGroup2Country2ScoreInput.value) {
     forwardSemiGroup2.style.backgroundColor = "#245c1e";
   } else {
     forwardSemiGroup2.style.backgroundColor = "#02be02";
   }
   // 
-  if (!finalTeam1ScoreInput.value && !finalTeam2ScoreInput.value) {
+  if (!finalCountry1ScoreInput.value && !finalCountry2ScoreInput.value) {
     forwardFinal.style.backgroundColor = "#245c1e";
   } else {
     forwardFinal.style.backgroundColor = "#02be02";
@@ -499,10 +483,10 @@ fraGoalsInput.addEventListener("input", () => {forwardColor()});
 marGoalsInput.addEventListener("input", () => {forwardColor()});
 porGoalsInput.addEventListener("input", () => {forwardColor()});
 // 
-semiGroup1Team1ScoreInput.addEventListener("input", () => {forwardColor()});
-semiGroup1Team2ScoreInput.addEventListener("input", () => {forwardColor()});
-semiGroup2Team1ScoreInput.addEventListener("input", () => {forwardColor()});
-semiGroup2Team2ScoreInput.addEventListener("input", () => {forwardColor()});
+semiGroup1Country1ScoreInput.addEventListener("input", () => {forwardColor()});
+semiGroup1Country2ScoreInput.addEventListener("input", () => {forwardColor()});
+semiGroup2Country1ScoreInput.addEventListener("input", () => {forwardColor()});
+semiGroup2Country2ScoreInput.addEventListener("input", () => {forwardColor()});
 // 
-finalTeam1ScoreInput.addEventListener("input", () => {forwardColor()});
-finalTeam2ScoreInput.addEventListener("input", () => {forwardColor()});
+finalCountry1ScoreInput.addEventListener("input", () => {forwardColor()});
+finalCountry2ScoreInput.addEventListener("input", () => {forwardColor()});
