@@ -150,6 +150,6 @@ function confetti(group) {
     animType: "svg",
     loop: false,
     autoplay: false,
-    path: "./celebrations/confetti.json",
+    path: "./assets/celebrations/confetti.json",
   });
 }
